@@ -1,3 +1,4 @@
+// our first database table will be Posts, which will have three columns: title, postText, and Username.
 module.exports = (sequelize, DataTypes) => {
     const Posts = sequelize.define("Posts", {
         title: { // colum number one in our database
