@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 app.use(express.json()); // parse json data from request body
+app.use(cors()); // allow requests from any origin
 
 const db = require('./models');
 

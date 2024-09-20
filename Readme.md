@@ -12,10 +12,3 @@ This is a short description of the project.
 1. Run `npm start` to start the application.
 2. Open your browser and navigate to `http://localhost:3001`.
 
-## Contributing
-
-Contributions are welcome! Please follow the guidelines in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
