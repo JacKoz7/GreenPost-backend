@@ -12,6 +12,8 @@ const PORT = process.env.PORT || 3001; // works for heroku
 // Routers
 const postRouter = require('./routes/Posts');
 app.use('/posts', postRouter);
+const commentRouter = require('./routes/Comments');
+app.use('/comments', commentRouter);
 
 db.sequelize.sync().then(() => {
     app.listen(PORT, () => { 
