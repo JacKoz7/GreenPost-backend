@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { Posts } = require('../models');
+const { Posts, Likes } = require('../models');
 
 // print data we have in database
 router.get('/', async (req, res) => { // every function from sequelize must be async
-    const listofPosts = await Posts.findAll();
+    const listofPosts = await Posts.findAll({include: [Likes]}); // join with likes table
     res.json(listofPosts);
 });
 
