@@ -8,6 +8,13 @@ const { sign } = require("jsonwebtoken"); // create token
 router.post("/", async (req, res) => {
   // adding user to database
   const { Username, Password } = req.body;
+
+  // Check if username already exists
+  const existingUser = await Users.findOne({ where: { Username: Username } });
+  if (existingUser) {
+    return res.status(400).json({ error: "Username already exists" });
+  }
+
   bcrypt.hash(Password, 10).then((hash) => {
     Users.create({
       Username: Username,
