@@ -1,14 +1,31 @@
-# Project Name
+# GreenPost Backend
 
-This is a short description of the project.
+Backend of the GreenPost project built using Node.js and Express.js.
+
+## Description
+
+This project is the backend part of the GreenPost web application, which provides the API for the frontend. The application includes features such as user login, registration, creating posts, viewing posts, commenting, liking, deleting posts, and deleting comments. It also uses a MySQL database.
 
 ## Installation
 
-1. Clone the repository.
-2. Run `npm install` to install the dependencies.
+To run the project locally, follow these steps:
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/JacKoz7/GreenPost-backend
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd GreenPost-backend
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Set up the MySQL database and update the database configuration in `config.js`.
 
 ## Usage
 
-1. Run `npm start` to start the application.
-2. Open your browser and navigate to `http://localhost:3001`.
-
+Run the server locally:
+```bash
+npm start
