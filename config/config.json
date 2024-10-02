@@ -14,10 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "be0e50d580cd43",
-    "password": "8e51b510",
-    "database": "heroku_bd3c151f8180624?reconnect=true",
-    "host": "eu-cluster-west-01.k8s.cleardb.net",
+    "use_env_variable": "DATABASE_URL",
     "dialect": "mysql"
   }
 }
