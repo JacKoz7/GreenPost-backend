@@ -22,7 +22,7 @@ To run the project locally, follow these steps:
     ```bash
     npm install
     ```
-4. Set up the MySQL database and update the database configuration in `config.js`.
+4. Set up the MySQL database and update the database configuration in `config.json`.
 
 ## Usage
 
