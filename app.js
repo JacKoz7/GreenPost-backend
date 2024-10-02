@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+require('dotenv').config(); // Load environment variables
 
 app.use(express.json()); // parse json data from request body
 app.use(cors()); // allow requests from any origin
@@ -23,7 +24,7 @@ db.sequelize
   .sync()
   .then(() => {
     app.listen(PORT, () => {
-      console.log("Server is running on port 3001");
+      console.log(`Server is running on port ${PORT}`);
     });
   })
   .catch((err) => {
