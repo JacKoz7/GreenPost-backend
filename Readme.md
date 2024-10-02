@@ -1,6 +1,7 @@
 # GreenPost Backend
 
 Backend of the GreenPost project built using Node.js and Express.js.
+https://greenpost.netlify.app
 
 ## Description
 
