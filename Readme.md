@@ -29,4 +29,4 @@ To run the project locally, follow these steps:
 
 Run the server locally:
 ```bash
-npm devStart
+npm start
