@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs"); // hash passwords
 const { validateToken } = require("../middlewares/AuthMiddleware");
 const { sign } = require("jsonwebtoken"); // create token
 
-router.post("/", async (req, res) => {
+router.post("/", validateRegistration, async (req, res) => {
   // adding user to database
   const { Username, Password } = req.body;
 
@@ -15,6 +15,7 @@ router.post("/", async (req, res) => {
     return res.status(400).json({ error: "Username already exists" });
   }
 
+  // hash password
   bcrypt.hash(Password, 10).then((hash) => {
     Users.create({
       Username: Username,
