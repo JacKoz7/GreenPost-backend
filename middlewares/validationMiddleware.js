@@ -10,8 +10,8 @@ const validateRegistration = [
   body('Password')
     .isLength({ min: 6, max: 15 })
     .withMessage('Password must be between 6 and 15 characters')
-    .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,15}$/)
-    .withMessage('Password must contain at least one letter and one number'),
+    .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/)
+    .withMessage('Password must contain at least six characters, including at least one letter and one number'),
   (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
