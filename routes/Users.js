@@ -4,6 +4,7 @@ const { Users } = require("../models");
 const bcrypt = require("bcryptjs"); // hash passwords
 const { validateToken } = require("../middlewares/AuthMiddleware");
 const { sign } = require("jsonwebtoken"); // create token
+const { validateRegistration } = require("../middlewares/validationMiddleware");
 
 router.post("/", validateRegistration, async (req, res) => {
   // adding user to database
