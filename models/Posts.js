@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         postText: { // colum number two
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         Username: { // colum number three 
             type: DataTypes.STRING,
