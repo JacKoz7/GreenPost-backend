@@ -23,6 +23,26 @@ router.get('/byId/:id', async (req, res) => {
     res.json(post);
 });
 
+router.put('/title', validateToken, async (req, res) => { // we put validateToken to check if user is logged in
+    const { newTitle, id } = req.body;
+    await Posts.update({title: newTitle}, {
+        where: {
+            id: id
+        }
+    });
+    res.json(newTitle);
+});
+
+router.put('/postText', validateToken, async (req, res) => { // update post text
+    const { newText, id } = req.body;
+    await Posts.update({postText: newText}, {
+        where: {
+            id: id
+        }
+    });
+    res.json(newText);
+});
+
 router.delete('/:postId', validateToken, async (req, res) => {
     const postId = req.params.postId;
     await Posts.destroy({
