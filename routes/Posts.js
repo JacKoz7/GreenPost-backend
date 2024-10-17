@@ -24,6 +24,7 @@ router.get('/', async (req, res) => {
 router.post('/', validateToken, upload.single('image'), async (req, res) => {
     const post = req.body;
     post.Username = req.user.Username;
+    post.UserId = req.user.id;
 
     // If an image is uploaded, save the file path
     if (req.file) {
@@ -76,6 +77,12 @@ router.delete('/:postId', validateToken, async (req, res) => {
     const postId = req.params.postId;
     await Posts.destroy({ where: { id: postId } });
     res.json("DELETED SUCCESSFULLY!");
+});
+
+router.get('/byuserId/:id', async (req, res) => {
+    const id = req.params.id;
+    const listOfPosts = await Posts.findAll({ where: { UserId: id }, include: [Likes] });
+    res.json(listOfPosts);
 });
 
 module.exports = router;
