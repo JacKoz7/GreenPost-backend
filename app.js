@@ -6,6 +6,9 @@ require('dotenv').config(); // Load environment variables
 app.use(express.json()); // parse json data from request body
 app.use(cors()); // allow requests from any origin
 
+// Serve static files from the "uploads" folder
+app.use('/uploads', express.static('uploads'));
+
 const db = require("./models");
 
 const PORT = process.env.PORT || 3001; // works for heroku

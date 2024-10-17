@@ -12,7 +12,11 @@ module.exports = (sequelize, DataTypes) => {
         Username: { // colum number three 
             type: DataTypes.STRING,
             allowNull: false,
-        }
+        },
+        imageUrl: {
+            type: DataTypes.STRING,
+            allowNull: true,
+          }
     });
 
     Posts.associate = (models) => {
